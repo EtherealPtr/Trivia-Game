@@ -1,0 +1,53 @@
+Physics 
+What is a Scalar? 
+1. A scalar is a quantity that describes a magnitude 
+2. A scalar is the same as Vector 
+3. A scalar is a quantity that describes a direction
+4. None of the above 
+Correct: 1
+Points: 15
+
+Physics 
+What is a Vector? 
+1. A vector represents a magnitude  
+2. A vector is a quantity that describes a magnitude and direction 
+3. A vector is not a mathematical concept
+4. None of the above 
+Correct: 2
+Points: 15
+
+Physics
+What is the difference between distance and displacement? 
+1. Distance and displacement are the same concept
+2. Distance is a scalar quantity and displacement is a vector quantity
+3. Distance is a vector quantity and displacement is a scalar quantity 
+4. None of the above 
+correct: 2
+Points 15
+
+Physics 
+What is the difference between speed and velocity? 
+1. There is no difference between speed and velocity 
+2. Speed is how fast and in what direction an object is moving while velocity is the rate \ of which an object covers distance
+3. Speed is a scalar quantity which describes the rate of which an object is moving while \ velocity is a vector quantity which describes the rate of which an object changes its position
+4. Answers 2 and 3
+Correct: 3
+Points 15
+
+Phyiscs 
+How to calculate the speed for an object in motion? 
+1. speed = time / distance
+2. speed = distance / time 
+3. speed = velocity / time 
+4. speed = distance / velocity
+Correct: 2
+Points 20
+
+Physics 
+How to caluclate the distance an object has covered? 
+1. Distance = speed * time
+2. Distance = velocity * time 
+3. Distance = speed * velocity 
+4. Distance = speed / time
+Correct: 1
+Points: 20
