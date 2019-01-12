@@ -32,6 +32,55 @@ def read_block(file) :
      
      return category, question, answers, correct, points;
 
+def highScore(playerScore) :
+    """Adds new high score to the highScore list pickled object"""
+    binFileName = "highScoreData.dat";
+    highScoreList = [];
+    binFile = open(binFileName, "rb");
+
+    try :
+        highScoreList = pickle.load(binFile);
+    except (EOFError) :
+        pass;
+    except (FileNotFoundError)  as e:
+        print("Unable to load high scores file: ", e);
+    
+    binFile.close();
+    binFile = open(binFileName, "wb");
+
+    # Check if the length of the high scores list is less than 3, if so add new entry
+    if (len(highScoreList) < 3) :
+        name = input("Enter your name to record your score: ");
+        newEntry = (name, playerScore);
+        highScoreList.append(newEntry);
+    else :
+        smallest = highScoreList[0][1];
+        index = 0;
+        
+        # Get the smallest score in the list
+        for i in range(len(highScoreList)) : 
+            if (smallest > highScoreList[i][1]) :
+                smallest = highScoreList[i][1];
+                index = i;
+
+        # Check if the player scored higher
+        if (playerScore > smallest) :
+            name = input("Enter your name to record your score: ");
+            del highScoreList[index];
+            newEntry = (name, playerScore);
+            highScoreList.append(newEntry);
+
+    # Sort the highScore list
+    highScoreList.sort(key = lambda elem: elem[1], reverse = True);
+                       
+    # Display highScore list
+    print("\nHigh Scores: ");
+    for score in range(len(highScoreList)) :
+        print(highScoreList[score][0], " ", highScoreList[score][1]);
+        
+    pickle.dump(highScoreList, binFile);
+    binFile.close();
+            
 def game_instructions() :
     """Introduces the game rules to the player"""
     print("\t\tWelcome to the Physics Trivia Challenge!\n", end = "");
@@ -49,13 +98,14 @@ def main() :
         if (category == "") :
             gameOver = True;
             print("Thanks for playing! Your total score is: ", score);
+            highScore(score);
             continue;
             
         print("Current score is: ", score);
         print("Topic: ", category, end="");
         print("Question: ", question, end="");
 
-        # print all the answers
+        # Print all the answers
         for line in answers :
             print(line, end="");
 
@@ -75,3 +125,4 @@ def main() :
     f.close();
 
 main();
+input("Press any key to terminate");
